@@ -1,0 +1,16 @@
+<div class="main-container">
+  <div class='options'>
+    <button (click)="$event.preventDefault(); command('bold')">Bold</button>
+    <button (click)="$event.preventDefault(); command('italic')">Italics</button>
+    <button (click)="$event.preventDefault(); command('underline')">Underline</button>
+    <button>Change Color
+      <input type="color" id="head" #colorPicker name="head" (change)="setColor($event.target.value)"
+             value="#e66465"></button>
+
+  </div>
+
+  <div class='editor' contentEditable="true" (mouseup)="getSelectedText()">
+      <p #editorText>Your text</p>
+  </div>
+</div>
+<synonyms [selectedText]="selectedText" (word)="replaceText($event)"></synonyms>

@@ -1,0 +1,7 @@
+<div *ngIf="synonymsList.length">
+  <h1>Synonyms</h1>
+  <div *ngFor="let wordList of synonymsList"
+       (click)="test(wordList.word)">
+    {{wordList.word}}
+  </div>
+</div>
