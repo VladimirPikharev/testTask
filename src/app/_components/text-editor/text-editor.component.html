@@ -9,8 +9,8 @@
 
   </div>
 
-  <div class='editor' contentEditable="true" (mouseup)="getSelectedText()">
-      <p #editorText>Your text</p>
+  <div class='editor' contentEditable="true" (mouseup)="getSelectedText()" #editorText>
+      Your text
   </div>
 </div>
 <synonyms [selectedText]="selectedText" (word)="replaceText($event)"></synonyms>
